@@ -47,7 +47,7 @@ def main():
 def listmounts():
   """List filesystems currently mounted."""
   mounts = subprocess.Popen(u'mount', stdout=subprocess.PIPE).communicate()[0]
-  mounts = re.findall(r'([\w.]*?):(.*?) on (.*?) .*?fuse4x.*?', mounts, re.IGNORECASE)
+  mounts = re.findall(r'([\w.@]*?):(.*?) on (.*?) .*?fuse4x.*?', mounts, re.IGNORECASE)
   return mounts
 
 
